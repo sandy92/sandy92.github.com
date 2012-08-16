@@ -321,7 +321,12 @@ $(document).ready(function(){
 	$main.tabs();
 	$reload.button();
 	
+	$container.on("contextmenu",function(e){
+	return false;
+	});
+	
 	tab_index=$main.tabs("option","selected");
+	//$container.empty();
 	reload($container,tab_index);
 	clickGrid($container,tab_index);
 	
@@ -354,10 +359,6 @@ $(document).ready(function(){
 			reload($container,tab_index);
 			clickGrid($container,tab_index);
 		}
-	});
-	
-	$container.on("contextmenu",function(e){
-		return false;
 	});
 	
 	
